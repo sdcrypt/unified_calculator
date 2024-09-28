@@ -1,2 +1,2 @@
-# unified_calculator
+# unifiedCalculator
 calculator with all areas of calculations.
