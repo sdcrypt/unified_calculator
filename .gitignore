@@ -45,3 +45,5 @@ ENV/
 #frontend dependencies
 frontend/node_modules
 package-lock.json
+
+db_data
