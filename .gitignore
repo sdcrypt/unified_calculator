@@ -46,4 +46,5 @@ ENV/
 frontend/node_modules
 package-lock.json
 
-db_data
+#db_data
+db_data/
