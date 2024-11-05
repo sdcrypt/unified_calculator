@@ -2,7 +2,7 @@
 version: '3.8'
 
 services:
-  postgres:
+  db:
     image: postgres:13
     container_name: postgres
     environment:
@@ -18,13 +18,12 @@ services:
     build:
       context: ./backend
     container_name: backend
-    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./backend:/app
     ports:
       - "8000:8000"
     depends_on:
-      - postgres
+      - db
     environment:
       - POSTGRES_NAME=mydatabase
       - POSTGRES_USER=myuser
@@ -41,6 +40,9 @@ services:
     volumes:
       - ./frontend:/app
     ports:
-      - "3000:80"
+      - "3000:3000"
     depends_on:
       - backend
+
+volumes:
+  db_data:
